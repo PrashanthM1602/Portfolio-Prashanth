@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Management — ER Diagram</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: sans-serif; background: #f4f4f8; padding: 28px; }
+  h1 { font-size: 18px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #666; margin-bottom: 20px; }
+  #erd { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e2ee; overflow-x: auto; }
+  #erd svg { width: 100%; height: auto; display: block; }
+  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; font-size: 12px; color: #555; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<h1>Fleet Management System — ER Diagram</h1>
+<p class="subtitle">13 normalized entities &nbsp;·&nbsp; Proper FK relationships &nbsp;·&nbsp; Full fleet lifecycle: vehicles, drivers, inspections, servicing, fuel, expenses, procurement</p>
+<div id="erd"><p style="color:#999;font-size:13px;padding:20px">Loading diagram...</p></div>
+<div class="legend">
+  <span class="legend-item"><span class="dot" style="background:#7F77DD"></span>Core — Vehicle, Driver</span>
+  <span class="legend-item"><span class="dot" style="background:#1D9E75"></span>Operations — Fuel, Inspection, Service, Tyre</span>
+  <span class="legend-item"><span class="dot" style="background:#D85A30"></span>Finance — Quotation, Expense, Purchase</span>
+  <span class="legend-item"><span class="dot" style="background:#378ADD"></span>Tracking — Driver location, Review</span>
+</div>
+
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: 'sans-serif',
+  themeVariables: {
+    fontSize: '12px',
+    fontFamily: 'sans-serif',
+    lineColor: '#7F77DD',
+    textColor: '#2d2d3a',
+    primaryColor: '#eeedfe',
+    primaryBorderColor: '#7F77DD',
+    primaryTextColor: '#26215C',
+    secondaryColor: '#eaf3de',
+    secondaryBorderColor: '#1D9E75',
+    tertiaryColor: '#faece7',
+    tertiaryBorderColor: '#D85A30',
+    edgeLabelBackground: '#f0f0fa',
+  },
+});
+
+const diagram = `erDiagram
+
+  VEHICLE {
+    int id PK
+    string plate_number
+    string vehicle_name
+    string vehicle_type
+    string fuel_type
+    string engine_no
+    string chassis_no
+    string ownership
+    string location
+    int odometer
+    date insurance_expiry
+    date fitness_end
+    datetime created_at
+  }
+
+  DRIVER {
+    int id PK
+    string driver_code
+    string full_name
+    string contact_number
+    string license_number
+    date license_expiry
+    string emergency_contact
+    datetime created_at
+  }
+
+  DRIVER_LOCATION {
+    int id PK
+    int driver_id FK
+    float latitude
+    float longitude
+    string status
+    datetime updated_at
+  }
+
+  FUEL_REPORT {
+    int id PK
+    string fuel_code
+    int vehicle_id FK
+    int driver_id FK
+    string fuel_type
+    date fueling_date
+    decimal price_per_liter
+    decimal quantity_liters
+    decimal total_amount
+    int odometer_reading
+    string station_name
+    datetime created_at
+  }
+
+  INSPECTION {
+    int id PK
+    string inspection_code
+    int vehicle_id FK
+    string title
+    string inspection_type
+    string manager
+    string status
+    datetime created_at
+  }
+
+  QUOTATION {
+    int id PK
+    string quotation_no
+    int inspection_id FK
+    int vehicle_id FK
+    decimal final_amount
+    string status
+    string created_by
+    date quotation_date
+  }
+
+  SERVICE {
+    int id PK
+    string service_number
+    int vehicle_id FK
+    int quotation_id FK
+    string service_type
+    string title
+    date service_date
+    string priority
+    string status
+    decimal total_amount
+    decimal due_amount
+    datetime created_at
+  }
+
+  SERVICE_ENTRY {
+    int id PK
+    int service_id FK
+    int item_id FK
+    string part_category
+    int quantity
+    decimal unit_price
+    decimal subtotal
+  }
+
+  ITEM {
+    int id PK
+    string part_no
+    string name
+    string category
+    string unit
+    decimal price
+    string status
+    datetime created_at
+  }
+
+  VENDOR {
+    int id PK
+    string name
+    string company_name
+    string email
+    string mobile
+    string city
+    string country
+    datetime created_at
+  }
+
+  PURCHASE_ORDER {
+    int id PK
+    int vendor_id FK
+    string title
+    string item_type
+    string status
+    int quantity
+    string manager
+    datetime created_at
+  }
+
+  EXPENSE {
+    int id PK
+    string reference_no
+    int vehicle_id FK
+    int driver_id FK
+    string category
+    decimal amount
+    int odometer_reading
+    string bill_number
+    date recorded_date
+    datetime created_at
+  }
+
+  TYRE_RECORD {
+    int id PK
+    int vehicle_id FK
+    int driver_id FK
+    string brand
+    string tyre_number
+    string tyre_type
+    string tyre_size
+    int odometer_reading
+    string replace_reason
+    date replacement_date
+  }
+
+  VEHICLE ||--o{ FUEL_REPORT : "fueled"
+  VEHICLE ||--o{ INSPECTION : "inspected"
+  VEHICLE ||--o{ SERVICE : "serviced"
+  VEHICLE ||--o{ EXPENSE : "expenses"
+  VEHICLE ||--o{ TYRE_RECORD : "tyres"
+  VEHICLE ||--o{ QUOTATION : "quoted"
+
+  DRIVER ||--o{ FUEL_REPORT : "drives"
+  DRIVER ||--o{ DRIVER_LOCATION : "located at"
+  DRIVER ||--o{ EXPENSE : "assigned"
+  DRIVER ||--o{ TYRE_RECORD : "handles"
+
+  INSPECTION ||--o{ QUOTATION : "generates"
+  QUOTATION ||--o{ SERVICE : "leads to"
+
+  SERVICE ||--o{ SERVICE_ENTRY : "contains"
+  SERVICE_ENTRY }o--|| ITEM : "uses"
+
+  VENDOR ||--o{ PURCHASE_ORDER : "fulfills"
+`;
+
+try {
+  const { svg } = await mermaid.render('erd-diagram', diagram);
+  document.getElementById('erd').innerHTML = svg;
+
+  document.querySelectorAll('#erd svg .node').forEach(node => {
+    const firstPath = node.querySelector('path[d]');
+    if (!firstPath) return;
+    const d = firstPath.getAttribute('d');
+    const nums = d.match(/-?[\d.]+/g)?.map(Number);
+    if (!nums || nums.length < 8) return;
+    const xs = [nums[0], nums[2], nums[4], nums[6]];
+    const ys = [nums[1], nums[3], nums[5], nums[7]];
+    const x = Math.min(...xs), y = Math.min(...ys);
+    const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', x); rect.setAttribute('y', y);
+    rect.setAttribute('width', w); rect.setAttribute('height', h);
+    rect.setAttribute('rx', '8');
+    for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+      if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+    }
+    firstPath.replaceWith(rect);
+  });
+
+  document.querySelectorAll('#erd svg .row-rect-odd path, #erd svg .row-rect-even path').forEach(p => {
+    p.setAttribute('stroke', 'none');
+  });
+} catch(e) {
+  document.getElementById('erd').innerHTML = '<p style="color:red;padding:20px">Error rendering diagram: ' + e.message + '</p>';
+}
+</script>
+</body>
+</html>

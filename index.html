@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Prashanth M">
+<meta property="og:title" content="Prashanth - Full Stack Developer">
+<meta name="description" content="Full Stack Developer specializing in Python, Django, and scalable backend systems">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Prashanth Python Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        onerror="console.warn('GSAP failed to load from CDN')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        onerror="console.warn('ScrollTrigger failed to load from CDN')"></script>
+
+    <!-- Locomotive Scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+        onerror="console.warn('Locomotive Scroll CSS failed to load')">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"
+        onerror="console.warn('Locomotive Scroll JS failed to load')"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style-modern.css">
+    <link rel="stylesheet" href="css/background-only.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="circular-loader">
+                <div class="loader-ring">
+                    <div class="loader-progress"></div>
+                </div>
+                <div class="loader-inner">
+                    <div class="loader-dot"></div>
+                </div>
+            </div>
+            <h1 class="welcome-text">WELCOME</h1>
+            <div class="loading-text">Loading...</div>
+            <div class="percentage-text">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" data-scroll-sticky>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">P</div>
+                <span class="purple-animated-text">Prashanth</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#services" class="nav-link">SERVICES</a></li>
+                <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="nav-icon">
+                    <i class="ph ph-briefcase"></i>
+                </div>
+                <a href="https://wa.me/8904338649" target="_blank" class="nav-hire-btn">Hire Me</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main data-scroll-container>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section" data-scroll-section>
+            <div class="hero-bg">
+                <!-- Background Image -->
+                <div class="background-image">
+                    <img src="images/background.png" alt="Background" class="bg-img">
+                </div>
+
+                <!-- Center Glow Effect -->
+                <div class="hero-center-glow"></div>
+
+                <!-- Floating accent orbs -->
+                <div class="floating-orbs">
+                    <div class="orb orb-1"></div>
+                    <div class="orb orb-2"></div>
+                    <div class="orb orb-3"></div>
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+
+                     I'm <span class="purple-animated-text">Prashanth</span>
+                    <span class="title-line"></span>
+
+                    <span class="red-animated-text">Python</span> Developer
+                    <span class="title-line"></span>
+
+                     <span class="title-line">Python | Django | React</span>
+                    </h1>
+                    <p class="hero-subtitle">Building scalable web applications and intelligent backend systems</p>
+                    <div class="hero-cta">
+                        <a href="resumes/resume.pdf" target="_blank" class="cta-button glow-btn resume-btn">
+                            <span>RESUME</span>
+                            <i class="ph ph-download"></i>
+                        </a>
+
+                        <!-- Social Media Buttons -->
+                        <div class="social-media-buttons">
+                            <a href="https://www.linkedin.com/in/prashanth-m-28561930a/" target="_blank"
+                                class="social-btn linkedin" title="LinkedIn">
+                                <i class="ph ph-linkedin-logo"></i>
+                            </a>
+                            <a href="https://github.com/PrashanthM1602" target="_blank" class="social-btn github"
+                                title="GitHub">
+                                <i class="ph ph-github-logo"></i>
+                            </a>
+                            <a href="mailto:prashanthrikkie775@gmail.com" class="social-btn email" title="Email">
+                                <i class="ph ph-envelope"></i>
+                            </a>
+                            <a href="https://wa.me/8904338649" target="_blank" class="social-btn whatsapp"
+                                title="WhatsApp">
+                                <i class="ph ph-whatsapp-logo"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" data-scroll-section>
+            <div class="section-particles"></div>
+            <div class="container"></div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="images/myimg.jpeg" alt="Jashwanth" class="profile-img">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title animated-heading">About Me</h2>
+                    <p class="about-description">
+                        I'm a Full Stack Developer specializing in Python, Django, and React with a strong backend focus.
+
+                        I have built scalable applications including a Fleet Management System featuring real-time tracking,
+                        predictive maintenance, and reporting automation.
+
+                        I enjoy designing efficient backend systems, building REST APIs, and solving real-world problems
+                        through clean architecture and data-driven solutions..
+                    </p>
+                    <div class="skills-grid">
+
+    <div class="skill-item">
+        <i class="ph ph-code"></i>
+        <span>Python</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-database"></i>
+        <span>Django</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-globe"></i>
+        <span>React</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-code"></i>
+        <span>JavaScript</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-database"></i>
+        <span>SQL</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-database"></i>
+        <span>MySQL</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-plugs-connected"></i>
+        <span>REST APIs</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-shield-check"></i>
+        <span>JWT Authentication</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-package"></i>
+        <span>Docker</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-git-branch"></i>
+        <span>Git</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-github-logo"></i>
+        <span>GitHub</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-lightning"></i>
+        <span>FastAPI</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-browser"></i>
+        <span>HTML & CSS</span>
+    </div>
+
+    <div class="skill-item">
+        <i class="ph ph-cube"></i>
+        <span>OOP</span>
+    </div>
+
+</div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <!-- Services Section -->
+<section id="services" class="services-section" data-scroll-section>
+    <div class="section-particles"></div>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Core Capabilities</h2>
+            <p class="section-subtitle">
+                Focused on building scalable backend systems and practical full stack applications
+                designed to solve real-world operational problems.
+            </p>
+        </div>
+
+        <div class="services-container">
+
+            <!-- Capability 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="ph ph-database"></i>
+                </div>
+
+                <h3 class="service-title">Backend Engineering</h3>
+
+                <p class="service-description">
+                    Developing secure and scalable backend systems using Python and Django,
+                    with emphasis on API architecture, database design, authentication,
+                    and performance optimization.
+                </p>
+
+                <div class="service-offerings">
+                    <h4>Key Areas:</h4>
+                    <ul>
+                        <li>Django & FastAPI Development</li>
+                        <li>REST API Design</li>
+                        <li>JWT Authentication</li>
+                        <li>Relational Database Design</li>
+                        <li>Query & Performance Optimization</li>
+                        <li>Business Workflow Automation</li>
+                    </ul>
+                </div>
+
+                <div class="service-status">
+                    <span class="status-indicator available"></span>
+                    <span class="status-text">Actively Building & Learning</span>
+                </div>
+            </div>
+
+
+            <!-- Capability 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="ph ph-code"></i>
+                </div>
+
+                <h3 class="service-title">Full Stack Application Development</h3>
+
+                <p class="service-description">
+                    Building responsive web applications by combining modern frontend interfaces
+                    with robust backend systems, with experience in dashboards, CRUD systems,
+                    and integrated business applications.
+                </p>
+
+                <div class="service-offerings">
+                    <h4>Key Areas:</h4>
+                    <ul>
+                        <li>React-Based Interfaces</li>
+                        <li>Responsive UI Development</li>
+                        <li>API Integration</li>
+                        <li>CRUD Application Development</li>
+                        <li>Dashboard & Admin Systems</li>
+                        <li>Deployment & Environment Setup</li>
+                    </ul>
+                </div>
+
+                <div class="service-status">
+                    <span class="status-indicator available"></span>
+                    <span class="status-text">Open to Collaboration</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section" data-scroll-section>
+    <div class="section-particles"></div>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Real-world backend systems & intelligent applications</p>
+        </div>
+
+        <div class="projects-container">
+
+            <!-- ===================== PROJECT 1 ===================== -->
+            <div class="project-card">
+
+                <!-- LEFT CONTENT -->
+                <div class="project-content">
+                    <span class="project-label">Flagship Project</span>
+
+                    <h3 class="project-title">VTrack360 – Fleet Management System</h3>
+
+                    <p class="project-description">
+                        A scalable fleet management platform with Admin Dashboard and Driver App,
+                        enabling real-time tracking, predictive maintenance, and reporting automation.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">DRF</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+
+                    <div class="project-links">
+
+    <a href="https://github.com/PrashanthM1602/fleetapp"
+       target="_blank"
+       class="project-btn github">
+        <i class="ph ph-github-logo"></i>
+        <span>Code</span>
+    </a>
+
+    <a href="https://fleetapp-jym7.onrender.com/"
+       target="_blank"
+       class="project-btn live">
+        <i class="ph ph-globe"></i>
+        <span>Admin Live</span>
+    </a>
+
+    <a href="https://fleetapp-jym7.onrender.com/driver/login/"
+       target="_blank"
+       class="project-btn driver">
+        <i class="ph ph-device-mobile"></i>
+        <span>Driver App</span>
+    </a>
+
+    <a href="fleet-erd.html"
+       target="_blank"
+       class="project-btn erd">
+        <i class="ph ph-diagram"></i>
+        <span>ER Diagram</span>
+    </a>
+
+</div>
+                </div>
+
+                <!-- RIGHT VIDEOS -->
+                <div class="project-video-container">
+
+                    <div class="video-box">
+                        <p class="video-label">Admin Demo</p>
+                        <video class="project-video" controls muted preload="metadata">
+                            <source src="demo/fleet-admin.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="video-box">
+                        <p class="video-label">Driver Demo</p>
+                        <video class="project-video" controls muted preload="metadata">
+                            <source src="demo/fleet-driver.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- ===================== PROJECT 2 ===================== -->
+            <div class="project-card">
+
+                <!-- LEFT CONTENT -->
+                <div class="project-content">
+                    <span class="project-label">AI Project</span>
+
+                    <h3 class="project-title">Productivity Mind – AI Task Workflow System</h3>
+
+                    <p class="project-description">
+                        AI-powered system that converts unstructured PDF content into structured tasks
+                        using an LLM-based pipeline with automated scheduling and workflow generation.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">GraphQL</span>
+                        <span class="tech-tag">LLM</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                        <span class="tech-tag">React</span>
+                    </div>
+
+                    <div class="project-links">
+
+    <a href="https://github.com/PrashanthM1602/taskmanager-backend.git"
+       target="_blank"
+       class="project-btn github"
+       title="View Source Code">
+        <i class="ph ph-github-logo"></i>
+        <span>Code</span>
+    </a>
+
+    <a href="https://taskmanger-rouge-six.vercel.app/"
+       target="_blank"
+       class="project-btn live"
+       title="Open Live Application">
+        <i class="ph ph-globe"></i>
+        <span>Live Demo</span>
+    </a>
+
+</div>
+                </div>
+
+                <!-- RIGHT VIDEO -->
+                <div class="project-video-container">
+
+                    <div class="video-box">
+                        <p class="video-label">AI PDF Demo</p>
+                        <video class="project-video" controls muted preload="metadata">
+                            <source src="demo/ai-pdf.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section" data-scroll-section>
+            <div class="section-particles"></div>
+            <div class="container">
+                <!-- Call to Action Card -->
+                <div class="cta-card">
+                    <h2 class="cta-title">Ready to bring your ideas to life?</h2>
+                    <p class="cta-description">
+                        Let's collaborate on your next project and create something amazing together. I'm
+                        passionate about delivering innovative solutions that make a real impact.
+                    </p>
+                    <a href="#get-in-touch" class="cta-button">Get In Touch</a>
+                </div>
+
+                <!-- Get In Touch Section -->
+                <div id="get-in-touch" class="get-in-touch">
+                    <h2 class="section-title">Get In <span class="highlight-text">Touch</span></h2>
+                    <p class="section-subtitle">Let's connect and discuss how we can work together on your next project
+                    </p>
+
+                    <div class="contact-grid">
+                        <!-- Contact Information -->
+                        <div class="contact-info-card">
+                            <h3 class="card-title">Contact Information</h3>
+
+                            <div class="contact-item">
+    <div class="contact-icon email-icon">
+        <i class="ph ph-envelope"></i>
+    </div>
+    <div class="contact-details">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">prashanthrikkie775@gmail.com</span>
+    </div>
+</div>
+
+<div class="contact-item">
+    <div class="contact-icon phone-icon">
+        <i class="ph ph-phone"></i>
+    </div>
+    <div class="contact-details">
+        <span class="contact-label">Phone</span>
+        <span class="contact-value">+91 8904338649</span>
+    </div>
+</div>
+
+<div class="contact-item">
+    <div class="contact-icon location-icon">
+        <i class="ph ph-map-pin"></i>
+    </div>
+    <div class="contact-details">
+        <span class="contact-label">Location</span>
+        <span class="contact-value">Bangalore, Karnataka, India</span>
+    </div>
+</div>
+
+                            <div class="connect-section">
+                                <h4 class="connect-title">Connect With Me</h4>
+                                <div class="social-links">
+
+    <a href="https://www.linkedin.com/in/prashanth-m-28561930a/"
+       target="_blank"
+       class="social-link linkedin">
+        <i class="ph ph-linkedin-logo"></i>
+    </a>
+
+    <a href="https://github.com/PrashanthM1602"
+       target="_blank"
+       class="social-link github">
+        <i class="ph ph-github-logo"></i>
+    </a>
+
+    <a href="mailto:prashanthrikkie775@gmail.com"
+       class="social-link email">
+        <i class="ph ph-envelope"></i>
+    </a>
+
+    <a href="https://wa.me/918904338649"
+       target="_blank"
+       class="social-link whatsapp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="contact-form-card">
+                            <h3 class="card-title">Send Me a Message</h3>
+
+                            <form class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">First Name</label>
+                                        <input type="text" class="form-input" placeholder="Your first name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Last Name</label>
+                                        <input type="text" class="form-input" placeholder="Your last name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-input" placeholder="your.email@example.com"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Subject</label>
+                                    <input type="text" class="form-input" placeholder="What's this about?" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-textarea" rows="5"
+                                        placeholder="Tell me about your project or just say hello!" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-button glass-morphism">
+                                    <span class="button-text">Send Message</span>
+                                    <div class="button-glow"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" data-scroll-section>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-text">
+                        <p>&copy; 2026 Prashanth. All rights reserved.</p>
+                    </div>
+                    <div class="footer-particles">
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/main-modern.js"></script>
+</body>
+
+</html>
